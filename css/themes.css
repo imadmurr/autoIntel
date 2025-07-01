@@ -1,0 +1,38 @@
+/* Placeholder for future theme overrides:
+   e.g. Dark Mode, Alternate Color Palettes, etc. */
+/* ===============================
+   Theme Color Variables
+   =============================== */
+:root {
+    --color-primary: #e67e22;        /* Warm orange accent */
+    --color-primary-hover: #cf6a1a;     /* slightly darker for hover */
+    --color-accent-light: #fff5e6;   /* Pale cream for light sections */
+    --color-dark-bg: #1a1a1a;        /* Deep charcoal */
+    --color-dark-bg-alt: #2e2e2e;    /* Slightly lighter charcoal */
+    --color-text-light: #ffffff;
+    --color-text-secondary: #d1d1d1;
+    --color-card-dark: #242424;      /* Dark card backgrounds */
+    --color-navbar-gradient-start: #0f0f0f;
+    --color-navbar-gradient-end: #222222;
+}
+/* Example: Dark theme override */
+body.dark-mode {
+    background-color: #212529 !important;
+    color: #e9ecef !important;
+}
+
+/* Example: Dark-mode navbar */
+body.dark-mode .navbar {
+    background-color: #1f2937 !important;
+}
+
+body.dark-mode .footer {
+    background-color: #1f2937 !important;
+}
+
+/* Example: Dark-mode cards */
+body.dark-mode .card {
+    background-color: #2c2f33 !important;
+    color: #e9ecef !important;
+}
+

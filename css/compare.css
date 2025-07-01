@@ -1,0 +1,159 @@
+/* compare.css */
+html, body {
+    height: 100%;
+}
+body {
+    display: flex;
+    flex-direction: column;
+}
+main.container {
+    flex: 1;              /* grow to fill available space */
+    display: flex;
+    flex-direction: column;
+}
+footer.footer {
+    flex-shrink: 0;       /* never collapse */
+}
+/* ─── Heading ─────────────────────────────────────────────────────────────── */
+main.container > h2 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #ff6600;                 /* orange accent so it's always visible */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+    margin-bottom: 1.5rem;
+}
+
+/* ─── Card wrapper ───────────────────────────────────────────────────────── */
+.compare-card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    background: #fff;
+    overflow: hidden;
+}
+
+/* ─── Picker & Selected Tags ───────────────────────────────────────────────── */
+.car-picker {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+.car-picker input {
+    flex: 1;
+    min-width: 200px;
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    padding: 0.5rem 0.75rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+.car-picker input:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Orange-accented Add Car button */
+.car-picker button {
+    background-color: #ff6600;
+    border-color: #ff6600;
+    color: #fff;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.2s, transform 0.1s;
+}
+.car-picker button:hover:not(:disabled) {
+    background-color: #e65500;
+    transform: translateY(-1px);
+}
+.car-picker button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Selected-car badges */
+.selected-cars {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+.selected-car {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #e7f1ff;
+    border-radius: 50px;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+}
+.selected-car button {
+    background: transparent;
+    border: none;
+    font-size: 1rem;
+    line-height: 1;
+    color: #c82333;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+.selected-car button:hover {
+    color: #a71d2a;
+}
+
+/* ─── Comparison Table ─────────────────────────────────────────────────────── */
+.table-responsive {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.comparison-table {
+    margin: 0;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+.comparison-table th,
+.comparison-table td {
+    vertical-align: middle;
+    padding: 0.75rem 1rem;
+}
+.comparison-table thead th {
+    background-color: #f0f4f8;
+    color: #212529;
+    font-weight: 600;
+    border-bottom: none;
+}
+.comparison-table tbody tr {
+    background: #fff;
+    transition: background-color 0.2s;
+}
+.comparison-table tbody tr:nth-of-type(odd) {
+    background: #fafbfc;
+}
+.comparison-table tbody tr:hover {
+    background-color: #eef2f6;
+    cursor: default;
+}
+
+/* Feature label column */
+.comparison-table td:first-child {
+    font-weight: 500;
+    color: #495057;
+    width: 25%;
+}
+
+/* Difference styling */
+.difference-positive {
+    color: #28a745 !important;
+}
+.difference-negative {
+    color: #dc3545 !important;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    .comparison-table th,
+    .comparison-table td {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.9rem;
+    }
+}

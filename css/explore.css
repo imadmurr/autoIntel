@@ -1,0 +1,190 @@
+/* styles.css */
+/* Buttons */
+html, body {
+    height: 100%;
+}
+body {
+    display: flex;
+    flex-direction: column;
+}
+main.container {
+    flex: 1;              /* grow to fill available space */
+    display: flex;
+    flex-direction: column;
+}
+footer.footer {
+    flex-shrink: 0;       /* never collapse */
+}
+/* 1. Hero background + overlay */
+/* --- EXPLORE.CSS: Hero background + overlay --- */
+.hero-top-picks {
+    position: relative;
+    min-height: 400px; /* ensure you can see it */
+    padding: 2.5rem 0;
+
+    /* layering: gradient on top of your image */
+    background-image:
+            linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+            url('../assets/images/hero_bg.jpg'); /* <-- correct relative path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+}
+
+.hero-top-picks::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    /* extra dark overlay if you want it darker */
+    background: rgba(0,0,0,0.4);
+    z-index: 1;
+}
+
+/* pop your carousel above the overlay */
+.hero-top-picks > .container {
+    position: relative;
+    z-index: 2;
+}
+
+
+.btn-orange {
+    background-color: var(--color-primary);
+    color: #fff;
+    transition: filter 0.3s;
+}
+
+.btn-outline-orange {
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+    transition: background-color 0.3s, color 0.3s;
+}
+.btn-outline-orange:hover {
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+/* Hero / Categories */
+.category-list .category-card {
+    background: #1f1f1f;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    width: 80px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.category-list .category-card:hover {
+    background-color: var(--color-primary);
+}
+.category-list img {
+    filter: invert(1);
+}
+
+/* Carousel cards */
+.carousel .car-card {
+    width: 16rem;
+}
+
+/* Card image hover */
+.car-card-img {
+    transition: transform 0.3s;
+}
+.car-card:hover .car-card-img {
+    transform: scale(1.05);
+}
+
+.car-card:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.5);
+}
+
+
+/* Search bar */
+.input-group-sm .form-control,
+.input-group-sm .btn {
+    font-size: 0.875rem;
+}
+
+/* in css/explore.css */
+.btn-favorite {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    background: transparent;
+    border: none;
+    padding: 0;
+    z-index: 3;
+    cursor: pointer;
+    transition: transform .2s ease;
+}
+
+.btn-favorite:focus {
+    outline: none;
+}
+
+.btn-favorite .bi-star-fill {
+    transform: scale(1.2);
+}
+
+/* give breathing room below the search bar */
+.explore-search {
+    position: sticky;
+    top: 56px; /* height of your navbar */
+    z-index: 100;
+    margin-bottom: 1.5rem;
+}
+
+/* ensure the hero-carousel sits behind everything when it scrolls up */
+.hero-top-picks {
+    margin-bottom: 5rem;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    background: #1f1f1f;
+    border-radius: 2rem;
+    padding: 0.25rem 0.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    margin: 0 auto;
+}
+
+/* 3) Input styling */
+.search-box .form-control {
+    flex: 1;
+    border: none;
+    background: transparent;
+    color: #fff;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+}
+.search-box .form-control:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* 4) Button styling */
+.search-box .btn {
+    border: none;
+    background: var(--color-primary);
+    color: #fff;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    padding: 0.75rem 1.5rem;
+    margin-left: 0.5rem;
+    transition: filter 0.2s;
+}
+.search-box .btn:hover {
+    filter: brightness(0.9);
+}
+
+.search-box .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.8);
+    opacity: 1;
+}
