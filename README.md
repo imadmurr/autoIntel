@@ -2,6 +2,8 @@
 
 Auto Intel is a modern, responsive web application for browsing, comparing, and saving your favorite cars. Powered by the API Ninjas Cars API, VIN Lookup API, and the Unsplash API, Auto Intel gives you up‑to‑date vehicle data with a sleek, intuitive interface.
 
+
+Live Demo: https://imadmurr.github.io/autoIntel/
 ---
 
 🔍 Features
